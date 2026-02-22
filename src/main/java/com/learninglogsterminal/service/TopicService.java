@@ -35,10 +35,12 @@ public class TopicService {
     //   nextId++;
     //   return topic;
     // ============================================================
-    public Topic addTopic(String name) {
-        // Write your code here
 
-        return null; // ← Replace this
+    public Topic addTopic(String name) {
+        Topic topic = new Topic(nextId, name); // create with auto ID
+        topics.add(topic);                     // store in list
+        nextId++;
+        return topic; // ← Replace this
     }
 
     // ============================================================
@@ -52,7 +54,7 @@ public class TopicService {
     public List<Topic> getAllTopics() {
         // Write your code here
 
-        return null; // ← Replace this
+        return topics; // ← Replace this
     }
 
     // ============================================================
@@ -65,7 +67,6 @@ public class TopicService {
     // ============================================================
     public int getTopicCount() {
         // Write your code here
-
-        return 0; // ← Replace this
+        return topics.size();
     }
 }
